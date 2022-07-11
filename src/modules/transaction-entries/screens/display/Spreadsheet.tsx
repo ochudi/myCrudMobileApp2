@@ -12,8 +12,8 @@ const Spreadsheet: React.FC<Props> = ({ entries }) => {
 
     return (
         <View style={styles.container}>
-            <Text h4 style={{color: 'red', margin: 12, textAlign: 'center'}}> Apologies - spreadsheet display type is yet to be implemented!</Text>
-            <Text h4 style={{color: 'green', margin: 12, textAlign: 'center'}}> Select another format from Settings menu above</Text>
+            <Text h4 style={{color: 'tomato', margin: 12, textAlign: 'center'}}> [Error]: Spreadsheet display type is not supported on this device!</Text>
+            <Text h4 style={{color: 'grey', margin: 12, textAlign: 'center'}}> [Note]: Select another format from 'Settings' menu above.</Text>
         </View>
     )
 }
@@ -27,7 +27,7 @@ export default Spreadsheet;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'lightblue',
+        backgroundColor: 'lightgrey',
         alignItems: 'center',
         justifyContent: 'center',
     },

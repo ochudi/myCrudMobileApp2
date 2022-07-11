@@ -18,7 +18,7 @@ export class TransactionEntry {
   description: string;
 
   @Column()
-  amount: number;
+  amount: string;
 
   @Column({default: true})
   expense: boolean

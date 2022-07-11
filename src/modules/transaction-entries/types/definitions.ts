@@ -6,7 +6,7 @@ export interface ITransactionEntry {
     txnMonth?: number;
     txnYear?: number;
     description: string;
-    amount: number;
+    amount: string;
     expense?: boolean
 }
 

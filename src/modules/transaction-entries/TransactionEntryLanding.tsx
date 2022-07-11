@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Image, ScrollView ,KeyboardAvoidingView ,StyleSheet, TouchableOpacity, View } from 'react-native';
 import { DataSource } from 'typeorm';
 import { TransactionEntry } from './entities/transaction-entry.entity';
 import { createTransactionEntry, deleteTransactionEntry, getTransactionEntries, updateTransactionEntry } from './services/transaction-entry.service';
@@ -56,14 +56,14 @@ const AppStack = () => {
                     anchor={<Button
                         icon={<Icon
                             name='more-vert' //The icon named more-vert is for vertical three dots. //To know names of available icons, check https://fonts.google.com/icons?selected=Material+Icons&icon.query=do as rne (react-native-elements) is using material icons
-                            color='black'
+                            color='grey'
                             size={30}
                         />}
                         type="clear"
                         onPress={() => setMenuVisible(true)}
                     />}
                     onRequestClose={() => setMenuVisible(false)}
-                    style={{ backgroundColor: 'lightblue' }}
+                    style={{ backgroundColor: 'lightgrey' }}
                 >
                     <MenuItem
                         onPress={() => {
@@ -77,7 +77,7 @@ const AppStack = () => {
                     >
                         <Icon
                             name="add"
-                            color="green"
+                            color="grey"
                             size={20}
                         /> Add Entry
                     </MenuItem>
@@ -97,7 +97,7 @@ const AppStack = () => {
                     >
                         <Icon
                             name="settings"
-                            color="green"
+                            color="grey"
                             size={20}
                         /> Settings
                     </MenuItem>
@@ -108,7 +108,7 @@ const AppStack = () => {
 
 
     return (
-        <Stack.Navigator //this red will disappear in later versions of @react/types. Do not worry about it.
+        <Stack.Navigator // this red will disappear in later versions of @react/types. Do not worry about it.
             initialRouteName='TransactionEntryHomeScreen'
 
             screenOptions={{
@@ -124,7 +124,7 @@ const AppStack = () => {
                     fontSize: 18,
                     //fontFamily: 'space-mono'
                 },
-                title: "Personal Transactions",
+                title: "Reminders",
                 //Below can be overriden at the level of stack.screen
                 headerRight: () => (
                     <View style={{ flexDirection: 'row' }}>
@@ -132,7 +132,7 @@ const AppStack = () => {
                             style={styles.logo}
                             onPress={() => navigation.navigate('TransactionEntryHomeScreen' as never)}>
                             <Image style={styles.logo}
-                                source={require('../../../assets/pau-logo-blue-transparent-background.png')}
+                                source={require('../../../assets/logo-red.png')}
                             />
                         </TouchableOpacity>
                         {toggleMenu()}
@@ -145,14 +145,14 @@ const AppStack = () => {
                 options={{ //override here, the general value in screenOptions above.
                     headerTitleAlign: 'left', 
                     headerTitleStyle: {
-                        fontSize: 21,
+                        fontSize: 30,
                     }
                 }}
             //there are other possibilities, see https://reactnavigation.org/docs/screen
             />
             <Stack.Screen name="AddEntryScreen" component={AddEntry}
                 options={{
-                    title: 'Add Entry'
+                    title: 'Input Task'
                 }}
                 listeners={{
                     focus: () => {
@@ -164,7 +164,7 @@ const AppStack = () => {
                 }} />
             <Stack.Screen name="EditEntryScreen" component={EditEntry}
                 options={{
-                    title: 'Edit Entry'
+                    title: 'Edit Task'
                 }}
             />
             <Stack.Screen name="SettingsScreen" component={Settings}

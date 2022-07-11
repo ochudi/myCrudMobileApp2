@@ -21,13 +21,13 @@ const EntryFlatList: React.FC<Props> = ({ entries }) => {
             ListHeaderComponent={
                 () => (
                     <View>
-                        <Text h3 style={[styles.inputContainerStyle, { backgroundColor: "lightblue" }]}>Entries so far... <Badge status="primary" value={entries.length} /></Text>
+                        <Text h3 style={[styles.inputContainerStyle, { backgroundColor: "lightblue" }]}>Tasks <Badge status="primary" value={entries.length} /></Text>
                     </View>
                 )}
 
             /*
             ListFooterComponent = {
-                ()=> (<View style={{backgroundColor:'#ccc', paddingBottom: 30, paddingTop: 3,alignContent:"flex-start"}}><Text style={{fontSize: 15, fontStyle: "italic"}}>Copyright: Pius Onobhayedo</Text></View>)
+                ()=> (<View style={{backgroundColor:'#ccc', paddingBottom: 30, paddingTop: 3,alignContent:"flex-start"}}><Text style={{fontSize: 15, fontStyle: "italic"}}>Copyright: Chudi Ofoma</Text></View>)
             }
             */
 
@@ -35,7 +35,7 @@ const EntryFlatList: React.FC<Props> = ({ entries }) => {
             ItemSeparatorComponent={
                 //this component will be rendered in between items
                 () => {
-                    return (<View style={{ backgroundColor: '#ccc', height: 3, width: '100%' }} />)
+                    return (<View style={{ backgroundColor: 'black', height: 3, width: '100%' }} />)
                 }
             }
         />

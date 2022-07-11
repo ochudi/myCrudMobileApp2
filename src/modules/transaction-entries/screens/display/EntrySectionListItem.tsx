@@ -21,35 +21,37 @@ const EntrySectionListItem: React.FC<Props> = ({ item }) => {
     
     return (
         <View style={styles.inputContainerStyle}>
-            <Text style={{ fontSize: 18 }}>Income?: {item.expense ? "No" : "Yes"}</Text>
-            <Text style={{ fontSize: 18 }}>Description: {item.description}</Text>
-            <Text style={{ fontSize: 18 }}>Amount: {item.amount}</Text>
+            <Text style={{ fontSize: 20 }}>Task: {item.description}</Text>
+            <Text style={{ fontSize: 15 }}>[Urgent]: {item.expense ? "No" : "Very!"}</Text>
+            <Text style={{ fontSize: 12 }}>Deadline: {item.amount}</Text>
             <ButtonGroup
-                containerStyle={{ backgroundColor: 'skyblue', width: '40%', borderColor: 'skyblue' }}
+                containerStyle={{ backgroundColor: 'lightgrey', width: '40%', borderColor: 'lightgrey' }}
                 buttons={
                     [<Button
                         icon={<Icon
                             name="edit"
-                            color="green"
+                            color="grey"
+                            size={20}
                         />}
                         type="clear"
                         title="Edit"
-                        titleStyle={{ fontSize: 15 }}
+                        titleStyle={{ fontSize: 12 }}
                         onPress={() => navigation.navigate("EditEntryScreen" as never,{transactionEntryToEdit: item} as never)}
                     />,
                     <Button
                         icon={<Icon
                             name="delete"
-                            color="red"
+                            color="tomato"
+                            size={20}
                         />}
                         type="clear"
-                        title="Delete"
-                        titleStyle={{ fontSize: 15 }}
+                        title="Remove"
+                        titleStyle={{ fontSize: 12 }}
                         onPress={() => {
                             //deleteEntry(item.id!)
                             showDeleteConfirmation(
                                 "About to Delete",
-                                "Are you sure that you want to delete this entry?",
+                                "Are you sure that you want to remove this task?",
                                 item.id!,
                                 deleteEntry
                             )

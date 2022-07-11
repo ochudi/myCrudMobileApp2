@@ -13,7 +13,7 @@ const EntrySectionList: React.FC<Props> = ({ entriesInDateSections }) => {
 
     return (
         <SectionList
-            style={{ width: '100%', padding: 3, backgroundColor: 'skyblue' }}
+            style={{ width: '100%', padding: 3, backgroundColor: 'lightgrey' }}
             sections={entriesInDateSections}
             keyExtractor={(item, index) => item + index.toString()}
             renderItem={({ item }) => (
@@ -27,20 +27,20 @@ const EntrySectionList: React.FC<Props> = ({ entriesInDateSections }) => {
             ListHeaderComponent={
                 () => (
                     <View>
-                        <Text h3 style={[styles.inputContainerStyle, { backgroundColor: "lightblue" }]}>Entries so far by date...</Text>
+                        <Text h3 style={[styles.inputContainerStyle, { backgroundColor: "lightblue" }]}>Tasks</Text>
                     </View>
                 )}
 
             /*
             ListFooterComponent = {
-                ()=> (<View style={{backgroundColor:'#ccc', paddingBottom: 30, paddingTop: 3,alignContent:"flex-start"}}><Text style={{fontSize: 15, fontStyle: "italic"}}>Copyright: Pius Onobhayedo</Text></View>)
+                ()=> (<View style={{backgroundColor:'#ccc', paddingBottom: 30, paddingTop: 3,alignContent:"flex-start"}}><Text style={{fontSize: 15, fontStyle: "italic"}}>Copyright: Chudi Ofoma</Text></View>)
             }
             */
 
             ItemSeparatorComponent={
                 //this component will be rendered in between items
                 () => {
-                    return (<View style={{ backgroundColor: '#ccc', height: 3, width: '100%' }} />)
+                    return (<View style={{ backgroundColor: 'black', height: 3, width: '100%' }} />)
                 }
             }
         />
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     },
     header: {
         fontSize: 16,
-        backgroundColor: "#eee",
+        backgroundColor: "grey",
         padding: 3
     }
 });

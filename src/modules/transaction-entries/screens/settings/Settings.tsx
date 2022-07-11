@@ -63,7 +63,7 @@ const Settings: React.FC = () => {
                 width: '100%',
                 padding: 10,
                 backgroundColor: '#fffff2'
-            }}>Select display type</Text>
+            }}>Sort Tasks By: </Text>
             <Picker
                 style={{ width: '100%' }}
                 selectedValue={state.displayOption}
@@ -73,9 +73,9 @@ const Settings: React.FC = () => {
                     handleSetDisplayOption(itemValue); //talk to App.tsx to set. Later move this to general settings save later
                 }
                 }>
-                <Picker.Item label="Flat List" value={DisplayOptions.FLAT_LIST} />
-                <Picker.Item label="By Date Sections" value={DisplayOptions.SECTION_LIST_BY_DATE} />
-                <Picker.Item label="Spreadsheet" value={DisplayOptions.SPREADSHEET} />
+                <Picker.Item label="Default" value={DisplayOptions.FLAT_LIST} />
+                <Picker.Item label="Date" value={DisplayOptions.SECTION_LIST_BY_DATE} />
+                <Picker.Item label="Table (unsupported)" value={DisplayOptions.SPREADSHEET} />
             </Picker>
             <Button style={{
                 width: '100%', padding: 10, backgroundColor: '#fffff2', paddingLeft: 1
@@ -85,7 +85,7 @@ const Settings: React.FC = () => {
                     //call create which will also make the form disappear
                     navigation.goBack();
                 }}
-                buttonStyle={{ backgroundColor: 'orange' }}
+                buttonStyle={{ backgroundColor: 'tomato', borderRadius: 10 }}
             />
         </View>
     )
