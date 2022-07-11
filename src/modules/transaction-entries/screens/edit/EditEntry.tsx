@@ -17,7 +17,7 @@ type IState = {
     txnYear: number | null;
     date: Date;
     description: string;
-    amount: string | null;
+    amount: string;
     expense: boolean
 }
 
